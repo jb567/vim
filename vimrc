@@ -2,7 +2,7 @@ set nocompatible
 set encoding=utf-8
 
 "Pathogen Bundle calls
-call pathogen#infect()
+call pathogen#infect('bundle/{}','colorschemes/{}')
 call pathogen#helptags()
 
 "Tab controls
@@ -19,7 +19,7 @@ if has('gui_running')
 else
     set background=dark
 endif
-colorscheme molokai
+colorscheme railscasts
 
 syntax on
 set number
