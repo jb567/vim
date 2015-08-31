@@ -24,7 +24,7 @@ syntax on
 set nowrap
 set nobackup
 set noswapfile
-set listchars=tab:?\ ,eol:¬
+set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 set matchpairs+=<:>
 set textwidth=80
 " set colorcolumn=80
@@ -51,18 +51,36 @@ if has('autocmd')
     autocmd InsertLeave * :setlocal hlsearch
 endif
 
-"Custom Mappings
+function! Reg()
+    reg
+    echo "Register: "
+    let char = nr2char(getchar())
+    if char != "\<Esc>"
+        execute "normal! \"".char."p"
+    endif
+    redraw
+endfunction
+
+command! -nargs=0 Reg call Reg()
+
+"CUSTOM MAPPINGS
+
 let mapleader="," "set comma to be the leader
 let g:mapleader="," "for safety
+
 "insert mode
 inoremap <ESC> <NOP>
 inoremap jj <ESC>
+
 "normal mode
 nnoremap <leader>r :%s/
 nnoremap <leader>d :cd %:p:h<CR>
+
 " inverse the selection
 nnoremap <space> :
+vnoremap <space> :
 nmap <leader>s :CtrlP<CR>
+nmap <leader><leader> :Reg<CR>
 "
 nnoremap of :NERDTreeToggle<CR>
 nmap j gj
@@ -72,19 +90,42 @@ nmap ]b :bnext<CR>
 map <Leader>cd :cd %:p:h<CR>
 nmap gV `[v`]
 "Window Toggles
-noremap <c-h> <c-w>h
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
+noremap <C-H> <C-W>h
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-L> <C-W>l
+
 "Ex mode
 cmap w!! w %!sudo tee > /dev/null % 
 
 cabbrev ew :wq
 cabbrev qw :wq
 
+"Visual block moving
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+"highlight
+nnoremap n nzz
+nnoremap N Nzz
+nmap <leader><space> :nohl<CR>
+
+
+"Word navigation
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
+"misc
+map Y y$
+
 "focus shifters
 au FocusLost * :silent! wall
 au VimResized * :wincmd =
+
 
 "Cursor line stuff
 "
@@ -109,20 +150,6 @@ let g:airline_theme = 'base16'
 " Abolish teh the
 " Abolish fucntion function
 
-"Startify
-let g:startify_session_dir = $VIMDIR + "/session"
-let g:startify_session_persistence = 0          " automatically update sessions
-let g:startify_session_delete_buffers = 1       " delete open buffers before loading a new session
-let g:startify_custom_footer = [
-    \ '',
-    \ '    b   ➤ open in new buffer  :SLoad   ➤ load a session     ',
-    \ '    s,v ➤ open in split       :SSave   ➤ save a session     ',
-    \ '    t   ➤ open in tab         :SDelete ➤ delete a session   ',
-    \ '',
-    \ ]
-let g:startify_custom_header =
-    \ map(split(system('fortune'), '\n'), '"   ". v:val') + ['']
-
 "airline
 let g:airline_powerline_fonts = 0
 set laststatus=2
@@ -141,9 +168,9 @@ let g:php_folding=1
 let g:perl_folding=1
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
