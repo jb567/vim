@@ -1,14 +1,15 @@
 ﻿"link to plugins filters for OS first
 
 if has('win32') || has('win64')
-    let $VIMDIR = expand('$USERPROFILE\vimfiles\')
+    let $VIMPLUGINDIR = expand('$USERPROFILE\vimfiles\plugin_settings')
 else
-    let $VIMDIR = expand( '~/.vim/' )
+    let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
 endif
 
-source $VIMDIR/vimplugins.vim
-"Tab controls
+source $VIMPLUGINDIR/vimplugins.vim
+let $MYPLUGINS = expand('$VIMPLUGINDIR\vimplugins.vim')
 
+"Tab controls
 set smartindent
 set tabstop=4
 set softtabstop=4
@@ -17,7 +18,9 @@ set expandtab
 
 "Aesthetic colourscheme
 set background=dark
-set guifont=Meslo\ LG\ S:h10
+set encoding=utf-8
+
+set guifont=DejaVu_Sans_Mono_for_Powerline:h10
 colorscheme base16-ocean
 
 syntax on
@@ -27,10 +30,9 @@ set noswapfile
 set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 set matchpairs+=<:>
 set textwidth=80
-" set colorcolumn=80
 set hlsearch incsearch
 
-"Wildmenu and ignores
+"Wildmenu and ignores {{
 set wildmenu
 set wildmode=list:longest
 set wildignore+=.hg,.git,.svn                    " Version control
@@ -44,11 +46,13 @@ set wildignore+=*.luac                           " Lua byte code
 set wildignore+=migrations                       " Django migrations
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
+"}}
 
 "AUTO COMMANDS
 if has('autocmd')
-    autocmd InsertEnter * :setlocal nohlsearch
-    autocmd InsertLeave * :setlocal hlsearch
+    " autocmd InsertEnter * :setlocal nohlsearch
+    " autocmd InsertLeave * :setlocal hlsearch
+    source $VIMPLUGINDIR/autocmd.vim
 endif
 
 function! Reg()
@@ -63,64 +67,7 @@ endfunction
 
 command! -nargs=0 Reg call Reg()
 
-"CUSTOM MAPPINGS
-
-let mapleader="," "set comma to be the leader
-let g:mapleader="," "for safety
-
-"insert mode
-inoremap <ESC> <NOP>
-inoremap jj <ESC>
-
-"normal mode
-nnoremap <leader>r :%s/
-nnoremap <leader>d :cd %:p:h<CR>
-
-" inverse the selection
-nnoremap <space> :
-vnoremap <space> :
-nmap <leader>s :CtrlP<CR>
-nmap <leader><leader> :Reg<CR>
-"
-nnoremap of :NERDTreeToggle<CR>
-nmap j gj
-nmap k gk
-nmap [b :bNext<CR>
-nmap ]b :bnext<CR>
-map <Leader>cd :cd %:p:h<CR>
-nmap gV `[v`]
-"Window Toggles
-noremap <C-H> <C-W>h
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-L> <C-W>l
-
-"Ex mode
-cmap w!! w %!sudo tee > /dev/null % 
-
-cabbrev ew :wq
-cabbrev qw :wq
-
-"Visual block moving
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
-"highlight
-nnoremap n nzz
-nnoremap N Nzz
-nmap <leader><space> :nohl<CR>
-
-
-"Word navigation
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
-
-"misc
-map Y y$
+source $VIMPLUGINDIR/keybinds.vim
 
 "focus shifters
 au FocusLost * :silent! wall
@@ -142,21 +89,17 @@ nnoremap <F5> :GundoToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
 let g:tabular_loaded = 1
 
-let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16'
 
-
-" "Abolish fo'shizzle
-" Abolish teh the
-" Abolish fucntion function
-
+" source $VIMPLUGINDIR\abolish_def.vim
+source $VIMPLUGINDIR\NERDTree.vim
 "airline
-let g:airline_powerline_fonts = 0
 set laststatus=2
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
 
 " Folding
 set foldmethod=syntax

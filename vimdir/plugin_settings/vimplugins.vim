@@ -1,7 +1,7 @@
 "Set NeoBundle start
 set nocompatible
 filetype off
-"Detect if windows or unix
+"Detect if windows or unix {{
 if has('win32') || has('win64')
     set rtp+=$USERPROFILE/vimfiles/bundle/neobundle.vim
     call neobundle#begin(expand('$USERPROFILE/vimfiles/bundle'))
@@ -9,6 +9,7 @@ else
     let rtp+=~/.vim/bundle/neobundle.vim
     call neobundle#begin(expand('~/.vim/bundle'))
 endif
+"}}
 call neobundle#begin()
 "NeoBundles to install
 
