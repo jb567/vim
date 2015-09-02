@@ -17,11 +17,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 "Basic plugins {{
 " NeoBundle 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
-" NeoBundle 'mhinz/vim-startify'
 NeoBundle 'andrewRadev/splitjoin.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/vim-diff-enhanced'
-NeoBundle 'dhruvasagar/vim-dotoo'
+" NeoBundle 'dhruvasagar/vim-dotoo'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
 NeoBundle 'kien/ctrlp.vim'
@@ -52,6 +51,8 @@ NeoBundle 'yankRing.vim'
 "Writing {{
 NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'junegunn/limelight.vim'
+NeoBundle 'vim-pandoc/vim-pandoc'
+NeoBundle 'vim-pandoc/vim-pandoc-syntax'
 " }}
 
 "Web-Dev plugins {{
@@ -62,22 +63,42 @@ NeoBundle 'othree/html5.vim'
 " }}
 
 "Ruby plugins {{
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
-" }}
+NeoBundle 'thoughtbot/vim-rspec', {
+    \'lazy': 1,
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'rails']
+    \   }
+    \}
+NeoBundle 'tpope/vim-cucumber', {
+    \'lazy': 1,
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'rails']
+    \   }
+    \}
 
-"Work-management plugins {{
-NeoBundle 'vimwiki'
+NeoBundle 'tpope/vim-rails', {
+    \'lazy': 1,
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'rails']
+    \   }
+    \}
+
+NeoBundle 'vim-ruby/vim-ruby', {
+    \'lazy': 1,
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'rails']
+    \   }
+    \}
+
 " }}
 
 "Other plugins {{
-NeoBundle 'hallison/vim-markdown'
+" NeoBundle 'hallison/vim-markdown'
 " }}
 
 "Colorschemes {{ ...bloody yanks its colourschemes
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'romainl/apprentice'
 "}}
 
 call neobundle#end()

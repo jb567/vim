@@ -5,7 +5,7 @@ let g:mapleader="," "for safety
 
 "insert mode
 inoremap <ESC> <NOP>
-inoremap jj <ESC>
+inoremap jk <ESC>
 
 "normal mode
 nnoremap <leader>r :%s/

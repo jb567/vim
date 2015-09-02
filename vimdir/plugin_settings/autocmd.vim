@@ -1,6 +1,7 @@
 "Detect file type {{
 au BufNewFile,BufRead *.vim setfiletype vim
-au BufNewFile,BufRead *.md setfiletype markdown
+au BufNewFile,BufRead *vimrc setfiletype vim
+" au BufNewFile,BufRead *.md setfiletype markdown
 "}}
 "
 "Act based on file type {{

@@ -6,8 +6,8 @@ else
     let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
 endif
 
-source $VIMPLUGINDIR/vimplugins.vim
 let $MYPLUGINS = expand('$VIMPLUGINDIR\vimplugins.vim')
+source $VIMPLUGINDIR/vimplugins.vim
 
 "Tab controls
 set smartindent
@@ -21,7 +21,7 @@ set background=dark
 set encoding=utf-8
 
 set guifont=DejaVu_Sans_Mono_for_Powerline:h10
-colorscheme base16-ocean
+colorscheme apprentice
 
 syntax on
 set nowrap
@@ -50,8 +50,6 @@ set wildignore+=*.orig                           " Merge resolution files
 
 "AUTO COMMANDS
 if has('autocmd')
-    " autocmd InsertEnter * :setlocal nohlsearch
-    " autocmd InsertLeave * :setlocal hlsearch
     source $VIMPLUGINDIR/autocmd.vim
 endif
 
@@ -80,8 +78,6 @@ au VimResized * :wincmd =
 "     au WinEnter,InsertLeave * set cursorline
 " augroup END
 
-"Weird others
-au BufRead,BufNewFile *.md set filetype=markdown
 
 "Activate any annoying plugins that don't like pathogen
 let g:ragtag_global_maps = 1
@@ -89,18 +85,12 @@ nnoremap <F5> :GundoToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
 let g:tabular_loaded = 1
 
-let g:airline_theme = 'base16'
 
 " source $VIMPLUGINDIR\abolish_def.vim
+"
 source $VIMPLUGINDIR\NERDTree.vim
 "airline
-set laststatus=2
-set noshowmode
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 1
-
+source $VIMPLUGINDIR\airline.vim
 " Folding
 set foldmethod=syntax
 
@@ -122,3 +112,4 @@ let g:syntastic_check_on_wq = 0
 " checkers
 let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
 let g:syntastic_jquery_checkers = ["jslint", "jshint"]
+source $VIMPLUGINDIR/pandoc.vim
