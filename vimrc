@@ -1,11 +1,9 @@
 ﻿"link to plugins filters for OS first
-
 if has('win32') || has('win64')
     let $VIMPLUGINDIR = expand('$USERPROFILE\vimfiles\plugin_settings')
 else
     let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
 endif
-
 let $MYPLUGINS = expand('$VIMPLUGINDIR\vimplugins.vim')
 source $VIMPLUGINDIR/vimplugins.vim
 
@@ -19,34 +17,11 @@ set expandtab
 "Aesthetic colourscheme
 set background=dark
 set encoding=utf-8
+set nu
 
-set guifont=DejaVu_Sans_Mono_for_Powerline:h10
-colorscheme apprentice
+source $VIMPLUGINDIR/font.vim
 
-syntax on
-set nowrap
-set nobackup
-set noswapfile
-set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
-set matchpairs+=<:>
-set textwidth=80
-set hlsearch incsearch
-
-"Wildmenu and ignores {{
-set wildmenu
-set wildmode=list:longest
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX crap
-set wildignore+=*.luac                           " Lua byte code
-set wildignore+=migrations                       " Django migrations
-set wildignore+=*.pyc                            " Python byte code
-set wildignore+=*.orig                           " Merge resolution files
-"}}
+source $VIMPLUGINDIR/wildmenu.vim
 
 "AUTO COMMANDS
 if has('autocmd')
@@ -81,7 +56,6 @@ au VimResized * :wincmd =
 
 "Activate any annoying plugins that don't like pathogen
 let g:ragtag_global_maps = 1
-nnoremap <F5> :GundoToggle<CR>
 let g:neocomplcache_enable_at_startup = 1
 let g:tabular_loaded = 1
 
@@ -113,3 +87,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
 let g:syntastic_jquery_checkers = ["jslint", "jshint"]
 source $VIMPLUGINDIR/pandoc.vim
+source $VIMPLUGINDIR/syntastic.vim
+cd $USERPROFILE

@@ -8,7 +8,9 @@ au BufNewFile,BufRead *vimrc setfiletype vim
 au Filetype vim
             \ setlocal syntax=vim        |
             \ setlocal foldmethod=marker |
-            \ setlocal foldmarker={{,}}
+            \ setlocal foldmarker={{{,}}}
 au Filetype nerdtree
             \ nmap <buffer> <leader>cd :NERDTreeCWD<CR>
+au Filetype text
+            \ setlocal formatprg=par
 "}}

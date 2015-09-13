@@ -1,5 +1,3 @@
-"CUSTOM MAPPINGS {{
-
 let mapleader="," "set comma to be the leader
 let g:mapleader="," "for safety
 
@@ -17,12 +15,11 @@ vnoremap <space> :
 nmap <leader>s :CtrlP<CR>
 nmap <leader><leader> :Reg<CR>
 "
-nnoremap of :NERDTreeToggle<CR>
 nmap j gj
 nmap k gk
 nmap [b :bNext<CR>
 nmap ]b :bnext<CR>
-map <Leader>cd :cd %:p:h<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>
 nmap gV `[v`]
 "Window Toggles
 noremap <C-H> <C-W>h
@@ -31,8 +28,7 @@ noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 
 "Ex mode
-cmap w!! w %!sudo tee > /dev/null % 
-
+cmap w!! w %!sudo tee > /dev/null %
 cabbrev ew :wq
 cabbrev qw :wq
 
@@ -56,4 +52,8 @@ sunmap e
 
 "misc
 map Y y$
-"}}
+
+"Plugins
+nnoremap <F5> :GundoToggle<CR>
+nnoremap gt :TagbarToggle<CR>
+nnoremap gb :NERDTreeToggle<CR>
