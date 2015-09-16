@@ -13,3 +13,11 @@ set matchpairs+=<:>
 set textwidth=80
 set hlsearch incsearch
 set ff=unix
+
+" tabstuffs {{{
+set tabstop=2
+set smartindent
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+" }}}

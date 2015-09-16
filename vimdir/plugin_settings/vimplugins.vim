@@ -3,8 +3,8 @@ set nocompatible
 filetype off
 "Detect if windows or unix {{{
 if has('win32') || has('win64')
-    set rtp+=$USERPROFILE/vimfiles/bundle/neobundle.vim
-    call neobundle#begin(expand('$USERPROFILE/vimfiles/bundle'))
+    set rtp+=~/vim/vimdir/bundle/neobundle.vim
+    call neobundle#begin(expand('$USERPROFILE/vim/vimdir/bundle'))
 else
     let rtp+=~/.vim/bundle/neobundle.vim
     call neobundle#begin(expand('~/.vim/bundle'))
@@ -16,10 +16,11 @@ call neobundle#begin()
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 "Basic plugins {{{
-" NeoBundle 'andrewRadev/splitjoin.vim'
 " NeoBundle 'dhruvasagar/vim-dotoo'
 " NeoBundle 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
 " NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'andrewRadev/splitjoin.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'godlygeek/tabular'
@@ -70,29 +71,29 @@ NeoBundle 'pangloss/vim-javascript'
 
 " Ruby plugins {{{
 NeoBundle 'thoughtbot/vim-rspec', {
-    \'lazy': 1,
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'rails']
-    \   }
-    \}
+            \'lazy': 1,
+            \ 'autoload': {
+            \   'filetypes': ['ruby', 'rails']
+            \   }
+            \}
 NeoBundle 'tpope/vim-cucumber', {
-    \'lazy': 1,
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'rails']
-    \   }
-    \}
+            \'lazy': 1,
+            \ 'autoload': {
+            \   'filetypes': ['ruby', 'rails']
+            \   }
+            \}
 NeoBundle 'tpope/vim-rails', {
-    \'lazy': 1,
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'rails']
-    \   }
-    \}
+            \'lazy': 1,
+            \ 'autoload': {
+            \   'filetypes': ['ruby', 'rails']
+            \   }
+            \}
 NeoBundle 'vim-ruby/vim-ruby', {
-    \'lazy': 1,
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'rails']
-    \   }
-    \}
+            \'lazy': 1,
+            \ 'autoload': {
+            \   'filetypes': ['ruby', 'rails']
+            \   }
+            \}
 "}}}
 
 " Other plugins {{{
@@ -106,7 +107,7 @@ NeoBundle 'romainl/apprentice'
 
 call neobundle#end()
 set nocompatible
-filetype plugin on
+filetype plugin indent on
 syntax on
 NeoBundleCheck
 "END

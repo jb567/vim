@@ -1,10 +1,10 @@
-"Detect file type {{
+"Detect file type {{{
 au BufNewFile,BufRead *.vim setfiletype vim
 au BufNewFile,BufRead *vimrc setfiletype vim
 " au BufNewFile,BufRead *.md setfiletype markdown
-"}}
-"
-"Act based on file type {{
+"}}}
+
+"Act based on file type {{{
 au Filetype vim
             \ setlocal syntax=vim        |
             \ setlocal foldmethod=marker |
@@ -13,4 +13,9 @@ au Filetype nerdtree
             \ nmap <buffer> <leader>cd :NERDTreeCWD<CR>
 au Filetype text
             \ setlocal formatprg=par
-"}}
+"}}}
+
+"focus shifters {{{
+au FocusLost * :silent! wall
+au VimResized * :wincmd =
+" }}}
