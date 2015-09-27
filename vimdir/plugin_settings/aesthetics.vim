@@ -1,23 +1,37 @@
+" OS Detection {{{
 if has('win32') || has('win64')
-    set guifont=DejaVu_Sans_Mono_for_Powerline_:h11:cANSI
+  set guifont=DejaVu_Sans_Mono_for_Powerline_:h11:cANSI
 else
-    set guifont=DejaVu_Sans_Mono_for_Powerline_ 10
+  set guifont=DejaVu_Sans_Mono_for_Powerline_ 10
 endif
+" }}}
+
 colorscheme apprentice
-syntax on
-set nowrap
-set nobackup
-set noswapfile
+set background=dark
+set encoding=utf-8
+set ff=unix
+set hlsearch incsearch
 set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 set matchpairs+=<:>
+set nobackup
+set noswapfile
+set nowrap
+set nu
 set textwidth=80
-set hlsearch incsearch
-set ff=unix
+syntax on
+set hidden
+set magic
+
+" Window splits {{{
+set splitright
+set splitbelow
+let g:choosewin_overlay_enable = 1
+" }}}
 
 " tabstuffs {{{
-set tabstop=2
+set expandtab
+set shiftwidth=2
 set smartindent
 set softtabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=2
 " }}}

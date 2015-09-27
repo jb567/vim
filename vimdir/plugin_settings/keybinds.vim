@@ -17,8 +17,6 @@ nmap <leader><leader> :Reg<CR>
 "
 nmap j gj
 nmap k gk
-nmap [b :bNext<CR>
-nmap ]b :bnext<CR>
 nnoremap <Leader>cd :cd %:p:h<CR>
 nmap gV `[v`]
 "Window Toggles
@@ -41,19 +39,31 @@ nnoremap n nzz
 nnoremap N Nzz
 nmap <leader><space> :nohl<CR>
 
+"misc
+map Y y$
 
-"Word navigation
+" map the system clipboard to leader  {{{
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+nnoremap <leader>Y "+Y
+vnoremap <leader>Y "+Y
+
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
+" }}}
+" Plugins {{{
+nnoremap <F5> :GundoToggle<CR>
+nnoremap gt :TagbarToggle<CR>
+nmap \\ <Plug>(choosewin)
+" camelcase
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
-
-"misc
-map Y y$
-
-"Plugins
-nnoremap <F5> :GundoToggle<CR>
-nnoremap gt :TagbarToggle<CR>
-nnoremap gb :NERDTreeToggle<CR>
+" }}}
