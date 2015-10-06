@@ -15,7 +15,6 @@ au Filetype text
       \ setlocal formatprg=par
 autocmd FileType gitcommit setlocal textwidth=72 |
       \ setlocal spell
-autocmd BufWrite *.scss GulpExt css
 "}}}
 
 "focus shifters {{{

@@ -1,122 +1,87 @@
-"Set NeoBundle start
+"Set Plug start
 set nocompatible
 filetype off
-"Detect if windows or unix {{{
-if has('win32') || has('win64')
-    set rtp+=~/vim/vimdir/bundle/neobundle.vim
-    call neobundle#begin(expand('$USERPROFILE/vim/vimdir/bundle'))
-else
-    let rtp+=~/.vim/bundle/neobundle.vim
-    call neobundle#begin(expand('~/.vim/bundle'))
-endif
-"}}}
-call neobundle#begin()
-"NeoBundles to install
-
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin(expand('~/USERPROFILE/vim/vimdir/bundle'))
 
 "Basic plugins {{{
-" NeoBundle 'dhruvasagar/vim-dotoo'
-" NeoBundle 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
-" NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'andrewRadev/splitjoin.vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'chrisbra/vim-diff-enhanced'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'honza/vim-snippets', {'depends': 'sirver/ultisnips'}
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'Konfekt/FastFold'
-NeoBundle 'lokaltog/vim-easymotion'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'nono/jquery.vim'
-NeoBundle 'roman/golden-ratio'
-NeoBundle 'ryanoasis/vim-devicons', {'depends': ['bling/vim-airline', 'kien/ctrlp.vim'] }
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'sirver/ultisnips'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'stormherz/tablify'
-NeoBundle 't9md/vim-choosewin'
-NeoBundle 'townk/vim-autoclose'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-flagship'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'vim-scripts/camelcasemotion'
-NeoBundle 'xolox/vim-easytags', {'depends': 'xolox/vim-misc'}
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'yankRing.vim'
+" Plug 'dhruvasagar/vim-dotoo'
+" Plug 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
+" Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" Plug 'yankRing.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'andrewRadev/splitjoin.vim'
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'bling/vim-airline' | Plug 'ryanoasis/vim-devicons'
+Plug 'chrisbra/vim-diff-enhanced'
+Plug 'godlygeek/tabular'
+Plug 'Konfekt/FastFold'
+Plug 'lokaltog/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'nono/jquery.vim'
+Plug 'roman/golden-ratio'
+Plug 'scrooloose/syntastic'
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'sjl/gundo.vim'
+Plug 'stormherz/tablify'
+Plug 't9md/vim-choosewin'
+Plug 'townk/vim-autoclose'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-flagship'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/camelcasemotion'
+Plug 'vimwiki/vimwiki'
+Plug 'wakatime/vim-wakatime'
+Plug 'xolox/vim-misc' | Plug 'xolox/vim-shell' | Plug 'xolox/vim-easytags'
+
 " }}}
 
 " Writing {{{
-NeoBundle 'junegunn/goyo.vim'
-NeoBundle 'junegunn/limelight.vim'
-NeoBundle 'vim-latex/vim-latex'
-NeoBundle 'vim-pandoc/vim-pandoc'
-NeoBundle 'vim-pandoc/vim-pandoc-syntax'
-"}}}
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'vim-latex/vim-latex', {'for': 'latex'}
+Plug 'vim-pandoc/vim-pandoc', {'for': ['latex', 'pandoc', 'markdown']}
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for': ['latex', 'pandoc', 'markdown']}
+" }}}
 
 "Web-Dev plugins {{{
-NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'KabbAmine/gulp-vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'spf13/piv'
+Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
+Plug 'elzr/vim-json', {'for': 'json'}
+Plug 'hail2u/vim-css3-syntax', {'for': ['javascript', 'scss']}
+Plug 'KabbAmine/gulp-vim'
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'mxw/vim-jsx', {'for': 'jsx'}
+Plug 'othree/html5.vim', {'for': ['html', 'php', 'phtml']}
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'html'] }
+Plug 'spf13/piv', { 'for': ['php', 'include'] }
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 "}}}
 
 " Ruby plugins {{{
-NeoBundle 'thoughtbot/vim-rspec', {
-      \'lazy': 1,
-      \ 'autoload': {
-      \   'filetypes': ['ruby', 'rails']
-      \   }
-      \}
-NeoBundle 'tpope/vim-cucumber', {
-      \'lazy': 1,
-      \ 'autoload': {
-      \   'filetypes': ['ruby', 'rails']
-      \   }
-      \}
-NeoBundle 'tpope/vim-rails', {
-      \'lazy': 1,
-      \ 'autoload': {
-      \   'filetypes': ['ruby', 'rails']
-      \   }
-      \}
-NeoBundle 'vim-ruby/vim-ruby', {
-      \'lazy': 1,
-      \ 'autoload': {
-      \   'filetypes': ['ruby', 'rails']
-      \   }
-      \}
+Plug 'thoughtbot/vim-rspec', { 'for': ['ruby', 'rails'] }
+Plug 'tpope/vim-cucumber', { 'for': ['ruby', 'rails'] }
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'rails'] }
 "}}}
 
 " Other plugins {{{
-NeoBundle 'hallison/vim-markdown'
+Plug 'hallison/vim-markdown'
+Plug 'freitass/todo.txt-vim'
 " }}}
 
 "Colorschemes {{{ ...bloody yanks its colourschemes
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'romainl/apprentice'
+Plug 'chriskempson/base16-vim'
+Plug 'romainl/apprentice'
 "}}}
 
-call neobundle#end()
+call plug#end()
 set nocompatible
 filetype plugin indent on
 syntax on
-NeoBundleCheck
 "END

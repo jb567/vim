@@ -26,7 +26,7 @@ noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 
 "Ex mode
-cmap w!! w %!sudo tee > /dev/null %
+" cmap w!! w %!sudo tee > /dev/null %
 cabbrev ew :wq
 cabbrev qw :wq
 
