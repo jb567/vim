@@ -13,7 +13,6 @@ source $MYPLUGINS
 
 "Activate any annoying plugins that don't like pathogen
 let g:ragtag_global_maps = 1
-let g:neocomplcache_enable_at_startup = 1
 
 " Where is the sauce {{{
 if has('autocmd')

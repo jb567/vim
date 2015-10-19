@@ -1,8 +1,8 @@
 " OS Detection {{{
 if has('win32') || has('win64')
-  set guifont=DejaVu_Sans_Mono_for_Powerline_:h11:cANSI
+  set guifont=Source_Code_Pro:h11:cANSI
 else
-  set guifont=DejaVu_Sans_Mono_for_Powerline_ 10
+  set guifont=Source_Code_Pro 10
 endif
 " }}}
 

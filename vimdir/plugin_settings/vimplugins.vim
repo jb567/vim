@@ -1,24 +1,22 @@
 "Set Plug start
 set nocompatible
 filetype off
-call plug#begin(expand('~/USERPROFILE/vim/vimdir/bundle'))
+call plug#begin(expand('~/vim/vimdir/bundle'))
 
 "Basic plugins {{{
 " Plug 'dhruvasagar/vim-dotoo'
-" Plug 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'}
 " Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Plug 'yankRing.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewRadev/splitjoin.vim'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'bling/vim-airline' | Plug 'ryanoasis/vim-devicons'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'scrooloose/syntastic'|  Plug 'bling/vim-airline' "| Plug 'ryanoasis/vim-devicons'
 Plug 'godlygeek/tabular'
 Plug 'Konfekt/FastFold'
 Plug 'lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'nono/jquery.vim'
 Plug 'roman/golden-ratio'
-Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'sjl/gundo.vim'
 Plug 'stormherz/tablify'
@@ -27,8 +25,9 @@ Plug 'townk/vim-autoclose'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-flagship'
+" Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -40,7 +39,6 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-shell' | Plug 'xolox/vim-easytags'
-
 " }}}
 
 " Writing {{{
@@ -71,8 +69,12 @@ Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'rails'] }
 "}}}
 
 " Other plugins {{{
-Plug 'hallison/vim-markdown'
-Plug 'freitass/todo.txt-vim'
+Plug 'hallison/vim-markdown', {'for': ['markdown', 'pandoc']}
+Plug 'freitass/todo.txt-vim', {'for': 'txt'}
+Plug 'rykka/instantrst'
+Plug 'rykka/riv.vim', {'for': 'rst', 'on':
+    \ ['RivQuickStart', 'RivPrimer',
+    \ 'RivSpecification', 'RivCheatsheet']}
 " }}}
 
 "Colorschemes {{{ ...bloody yanks its colourschemes
@@ -84,4 +86,3 @@ call plug#end()
 set nocompatible
 filetype plugin indent on
 syntax on
-"END
