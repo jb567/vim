@@ -1,7 +1,7 @@
 ﻿"link to plugins filters for OS first {{{
 if has('win32') || has('win64')
-    let $VIMPLUGINDIR = expand('~\vim\vimdir\plugin_settings')
-    let $MYVIMRC='C:\Users\Jacob\vim\vimrc'
+    let $VIMPLUGINDIR = expand('~\vimfiles\plugin_settings')
+    let $MYVIMRC=expand('%')
 else
     let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
     let $MYVIMRC=expand('%')
