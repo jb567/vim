@@ -6,7 +6,7 @@ else
 endif
 " }}}
 
-colorscheme base16-londontube
+colorscheme base16-monokai
 set background=dark
 set encoding=utf-8
 set ff=unix
