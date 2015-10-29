@@ -1,12 +1,12 @@
 " OS Detection {{{
 if has('win32') || has('win64')
-  set guifont=Source_Code_Pro:h11:cANSI
+  set guifont=Sauce_Code_Powerline:h12:cANSI
 else
   set guifont=Source_Code_Pro 10
 endif
 " }}}
 
-colorscheme base16-monokai
+colorscheme base16-eighties
 set background=dark
 set encoding=utf-8
 set ff=unix
