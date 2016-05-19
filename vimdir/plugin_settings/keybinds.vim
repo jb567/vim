@@ -2,23 +2,39 @@ let mapleader="," "set comma to be the leader
 let g:mapleader="," "for safety
 
 "insert mode
+"===========
+"make shit easier to escape
 inoremap <ESC> <NOP>
 inoremap jk <ESC>
 
 "normal mode
-nnoremap <leader>r :%s/
-nnoremap <leader>d :cd %:p:h<CR>
+"===========
+"remove the highlighting after
+nnoremap <silent> i :nohl<cr>i
+"set current directory to file location
+nnoremap <silent> <leader>cd :cd %:p:h<CR>
 
-" inverse the selection
+"make the n and N center the line
+nmap <silent> n :norm! nzzzv<CR>
+nmap <silent> N :norm! Nzzzv<CR>
+
+" make a new Ex-mode opener
 nnoremap <space> :
 vnoremap <space> :
-nmap <leader>s :CtrlP<CR>
+"remove Ex mode
+nnoremap Q <nop>
+
+"ctrlP toggle
+nnoremap <leader>s :CtrlP<CR>
+
+"YankRing
 nmap <leader><leader> :Reg<CR>
-"
-nmap j gj
-nmap k gk
-nnoremap <Leader>cd :cd %:p:h<CR>
+noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
+noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
+
+"Go to last copy
 nmap gV `[v`]
+
 "Window Toggles
 noremap <C-H> <C-W>h
 noremap <C-J> <C-W>j
@@ -27,16 +43,15 @@ noremap <C-L> <C-W>l
 
 "Ex mode
 " cmap w!! w %!sudo tee > /dev/null %
-cabbrev ew :wq
-cabbrev qw :wq
+cnoremap <silent> jk <C-c>
 
 "Visual block moving
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+"remap so it does macros over every line
+vnoremap @ :norm@
 
 "highlight
-nnoremap n nzz
-nnoremap N Nzz
 nmap <leader><space> :nohl<CR>
 
 "misc

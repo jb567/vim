@@ -12,9 +12,11 @@ au Filetype vim
 au Filetype nerdtree
       \ nmap <buffer> <leader>cd :NERDTreeCWD<CR>
 au Filetype text
-      \ setlocal formatprg=par
-autocmd FileType gitcommit setlocal textwidth=72 |
+      \ setlocal formatprg=par |
       \ setlocal spell
+au FileType gitcommit setlocal textwidth=72 |
+      \ setlocal spell
+au FileType markdown setlocal spell
 "}}}
 
 "focus shifters {{{

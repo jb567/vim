@@ -1,4 +1,4 @@
-let g:UltiSnipsSnippetsDir = '~/vim/vimdir/snippets/'
+let g:UltiSnipsSnippetsDir = '~/vim/vimdir/snippets/' "TODO: Make ultisnips work for all the fo'shizzle
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"

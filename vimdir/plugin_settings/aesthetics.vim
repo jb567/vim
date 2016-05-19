@@ -1,6 +1,6 @@
 " OS Detection {{{
 if has('win32') || has('win64')
-  set guifont=Sauce_Code_Powerline:h12:cANSI
+  set guifont=Source_Code_Pro:h12
 else
   set guifont=Source_Code_Pro 10
 endif
@@ -13,14 +13,11 @@ set ff=unix
 set hlsearch incsearch
 set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 set matchpairs+=<:>
-set nobackup
-set noswapfile
 set nowrap
 set nu
+set rnu
 set textwidth=80
 syntax on
-set hidden
-set magic
 
 " Window splits {{{
 set splitright

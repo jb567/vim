@@ -1,11 +1,10 @@
 ﻿"link to plugins filters for OS first {{{
 if has('win32') || has('win64')
     let $VIMPLUGINDIR = expand('~\vimfiles\plugin_settings')
-    let $MYVIMRC=expand('%')
 else
     let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
-    let $MYVIMRC=expand('%')
 endif
+let $MYVIMRC = expand('%')
 "}}}
 let $MYPLUGINS = expand('$VIMPLUGINDIR/vimplugins.vim')
 source $MYPLUGINS
@@ -23,11 +22,9 @@ source $VIMPLUGINDIR/airline.vim
 source $VIMPLUGINDIR/folding.vim
 source $VIMPLUGINDIR/functions.vim
 source $VIMPLUGINDIR/keybinds.vim
-source $VIMPLUGINDIR/pandoc.vim
+source $VIMPLUGINDIR/misc.vim
 source $VIMPLUGINDIR/syntastic.vim
 source $VIMPLUGINDIR/ultisnips.vim
-source $VIMPLUGINDIR/wildmenu.vim
 " }}}
 
-cd $USERPROFILE
 let @/ = "" "Prevent work from spilling over
