@@ -9,36 +9,33 @@ call plug#begin(expand('$VIMPLUGINDIR/../bundle')) "Test
 " Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Plug 'tpope/vim-flagship'
 " Plug 'yankRing.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'andrewRadev/splitjoin.vim'
-Plug 'chrisbra/vim-diff-enhanced'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'scrooloose/syntastic'|  Plug 'bling/vim-airline' "| Plug 'ryanoasis/vim-devicons'
-Plug 'godlygeek/tabular'
-Plug 'Konfekt/FastFold'
-Plug 'lokaltog/vim-easymotion'
-Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
-Plug 'roman/golden-ratio'
-Plug 'sheerun/vim-polyglot'
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'stormherz/tablify'
-Plug 'townk/vim-autoclose'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'vimwiki/vimwiki'
-Plug 'wellle/targets.vim'
-Plug 'xolox/vim-misc' | Plug 'xolox/vim-shell' | Plug 'xolox/vim-easytags'
+" Plug 'townk/vim-autoclose'         | " automatically closes stuff
+" Plug 'tpope/vim-ragtag'            | " XML-like editing
+" Plug 'tpope/vim-sleuth'            | " context sensitive indentation
+Plug 'airblade/vim-gitgutter'      | " add git to the left hand side
+Plug 'andrewradev/splitjoin.vim'   | " add quick expansion to single line code
+Plug 'chrisbra/vim-diff-enhanced'  | " improves vim's default diff algorithm to spot multiline moves
+Plug 'konfekt/fastfold'            | " changes the auto folding algorithm to only check when you want to use folds
+Plug 'majutsushi/tagbar'           | " Adds a bar on the right hand side for CTAG navigation
+Plug 'mbbill/undotree'             | " Adds a graphical undo tree interface -- not really used much
+Plug 'roman/golden-ratio'          | " Auto window focus sizing
+Plug 'sheerun/vim-polyglot'        | " Alot of syntax highlighting
+Plug 'stormherz/tablify'           | " macro creation of ascii tables
+Plug 'tommcdo/vim-lion'            | " text alignment
+Plug 'tpope/vim-abolish'           | " textual character replacement
+Plug 'tpope/vim-commentary'        | " quick commenting 
+Plug 'tpope/vim-fugitive'          | " decent git integration
+Plug 'tpope/vim-repeat'            | " support for . repeats for other plugins
+Plug 'tpope/vim-sensible'          | " default options
+Plug 'tpope/vim-speeddating'       | " increment times
+Plug 'tpope/vim-surround'          | " allows vim to surround an area with things
+Plug 'tpope/vim-unimpaired'        | " buffer/arg list navigation
+Plug 'tpope/vim-vinegar'           | " minimal netrw skin
+Plug 'bkad/camelcasemotion'        | " Camel case word wise movement
+Plug 'vimwiki/vimwiki'             | " vim wiki
+Plug 'w0rp/ale'                    | " asynchronous linting
+Plug 'wellle/targets.vim'          | " more text objects
+Plug 'xolox/vim-misc'              | Plug 'xolox/vim-easytags'          | " CTag auto generation
 " }}}
 
 " Writing {{{

@@ -2,7 +2,7 @@
 if has('win32') || has('win64')
   set guifont=Source_Code_Pro:h12
 else
-  set guifont=Source_Code_Pro 10
+  set guifont=Source_Code_Pro:h10
 endif
 " }}}
 

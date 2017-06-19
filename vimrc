@@ -2,7 +2,7 @@
 if has('win32') || has('win64')
     let $VIMPLUGINDIR = expand('~\vimfiles\plugin_settings')
 else
-    let $VIMPLUGINDIR = expand( '~/.vim/plugin_settings/' )
+    let $VIMPLUGINDIR = expand('~/.vim/plugin_settings')
 endif
 let $MYVIMRC = expand('%')
 "}}}
@@ -23,8 +23,6 @@ source $VIMPLUGINDIR/folding.vim
 source $VIMPLUGINDIR/functions.vim
 source $VIMPLUGINDIR/keybinds.vim
 source $VIMPLUGINDIR/misc.vim
-source $VIMPLUGINDIR/syntastic.vim
-source $VIMPLUGINDIR/ultisnips.vim
 " }}}
 
 let @/ = "" "Prevent work from spilling over

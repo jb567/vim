@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/am/state-opera/home1/bealjaco/.fzf/src'
+let g:netrw_dirhist_2='/am/state-opera/home1/bealjaco/scratch/temp_c'
+let g:netrw_dirhist_3='/am/state-opera/home1/bealjaco/dotfiles/vim/vimdir/plugin_settings'
+let g:netrw_dirhist_4='/am/state-opera/home1/bealjaco/dotfiles/vim/vimdir'
+let g:netrw_dirhist_5='/am/state-opera/home1/bealjaco/dotfiles/vim'
+let g:netrw_dirhist_6='/am/state-opera/home1/bealjaco/dotfiles/vim/vimdir'
+let g:netrw_dirhist_7='/am/state-opera/home1/bealjaco/dotfiles/vim/vimdir/plugin_settings'
+let g:netrw_dirhist_8='/am/bats/vol/x3/courses/comp261/.sdemo'
