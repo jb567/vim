@@ -22,7 +22,7 @@ nmap <silent> N :norm! Nzzzv<CR>
 nnoremap <space> :
 vnoremap <space> :
 "remove Ex mode
-nnoremap Q <nop>
+"nnoremap Q <nop>
 
 "ctrlP toggle
 nnoremap <leader>s :CtrlP<CR>

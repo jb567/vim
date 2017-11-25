@@ -21,3 +21,8 @@ function! s:wipeout()
   echom wiped . ' buffers wiped'
 endfunction
 command! Wipeout call s:wipeout()
+
+function! RenderLatex()
+  Start!latexmk -pdf -new-viewer- -pvc %
+endfunction
+command! Rlatex call RenderLatex()

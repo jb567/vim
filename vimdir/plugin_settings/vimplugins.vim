@@ -2,7 +2,11 @@
 set nocompatible
 filetype off
 "call plug#begin(expand('~/vim/vimdir/bundle')) "OLD
-call plug#begin(expand('$VIMPLUGINDIR/../bundle')) "Test
+if(has('nvim'))
+    call plug#begin()
+else
+    call plug#begin('$VIMPLUGINDIR/../bundle') "Test
+endif
 
 "Basic plugins {{{
 " Plug 'dhruvasagar/vim-dotoo'
@@ -53,6 +57,9 @@ Plug 'chriskempson/base16-vim'
 Plug 'romainl/apprentice'
 "}}}
 
+" NeoVim stuff {{{
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" }}}
 call plug#end()
 set nocompatible
 filetype plugin indent on
