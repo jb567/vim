@@ -1,8 +1,8 @@
 " OS Detection {{{
 if has('win32') || has('win64')
-  set guifont=Source_Code_Pro:h12
+  set guifont=PragmataPro:h12
 else
-  set guifont=Source_Code_Pro:h10
+  set guifont=PragmataPro:h12
 endif
 " }}}
 
